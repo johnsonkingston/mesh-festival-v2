@@ -1,0 +1,14 @@
+html 
+    head 
+        title=data.translations[0].Title
+    body 
+        include includes/navigation.pug
+
+        h1 
+            =data.translations[0].Title
+
+        script.
+            data = !{JSON.stringify(data).replace(/<\//g, "<\\/")};
+            console.log('data object', data);
+
+        include includes/footer.pug

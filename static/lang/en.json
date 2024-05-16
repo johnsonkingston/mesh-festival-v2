@@ -1,0 +1,46 @@
+{
+  "title": "Mesh – Festival of Art and Technology – Freilager-Platz Münchenstein / Basel – October 17–20 2024",
+  "infos": "Mesh \n Festival of Art and Technology \n Freilager-Platz Münchenstein / Basel \n October 17–20 2024",
+  "headline": "Multi-sensory Experiences, Interactive, Immersive Environments and Installations, Reflections on a Friendly Future",
+  "statement": "Festival",
+  "statementContent": "Mesh is a festival of art and technology. It focuses on the collaboration between artists and technologists and thus shows the influence of new technologies on society and how these developments are to be viewed. Tooling the Future is the focus of the first festival edition, which is dedicated to the question of new or different tools for a friendly future. \n From imaginaries of AI cities to the breaching of planetary boundaries: our world is getting more interconnected and meshed every day. Powerful tools like AI can create texts, images, or whole environments with a click of a computer button. The advance of quantum computing promises solving previously unsolvable computing problems. Yet what kinds of solutions and spaces do we want? From critical access tools to proposals for bodily coalitions, what are the tools of the future that we really need? \n Discover artistic projects at the intersection of art, technology, and community at the Mesh Festival. The first edition delves into the world of tools that pave the way for a better future. The focus is on the following goals: \n • Reimagining tools: The art projects presented challenge the prevailing narrative of technology as an end in itself. You are invited to question the meaning behind the tools we use every day and how they shape our society. \n • Immersive Experience: Mesh lets you explore the boundaries between humans and technology and encourages you to think about the balance between control and agency in our digital lives. \n • Radical Exploration: Learning about relevant computational practices increases awareness of pressing ethical issues, encourages critical thinking, but also generates care and trust in new technologies. \n • Joyful Experimentation: Mesh is a place for experimentation with environmental justice practices and interdisciplinary approaches to technologies.\n Together, let's explore how we can shape a future where tools empower us to live more meaningful, connected, and convivial lives.",
+  "theme": "Tooling the Future",
+  "newsletterContent": "Subscribe to our newsletter \n and stay tuned.",
+  "contact":"Contact",
+  "contactContent": "Mesh \n Festival of Art and Technology \n Freilager-Platz 3 \n 4142 Münchenstein \n <a href='mailto:hello@meshfestival.ch'>hello@meshfestival.ch</a>",
+  "pressContact":"Press \n <a href='mailto:media@meshfestival.ch'>media@meshfestival.ch</a>",
+  "program":"Program",
+  "programContent":"Exhibitions \n Performances \n Conference \n Workshops \n Guided Tours \n Club Nights",
+  "follow":"Follow us on Instagram!",
+  "initiative":"The festival is a joint initiative of",
+  "sponsor": "The festival is supported by",
+  "fhnw": "static/img/FHNW_HGK_EN.svg",
+  "imprint": "Imprint",
+  "imprintContent": "<u>Imprint</u> \n Executive Committee: Sabine Himmelsbach (<a href='https://hek.ch' target='_blank'>HEK</a>), Matthias Böttger (<a href='https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk/institut-experimentelles-design-und-medienkulturen' target='_blank'>FHNW</a>), Valentin Spiess (<a href='https://iart.ch' target='_blank'>iart</a>) \n Creative Direction: Sabine Himmelsbach (<a href='https://hek.ch' target='_blank'>HEK</a>), Marlene Wenger (<a href='https://hek.ch' target='_blank'>HGK Basel FHNW</a>), Dr. Helen V. Pritchard (<a href='https://www.fhnw.ch/de/die-fhnw/hochschulen/hgk/institut-experimentelles-design-und-medienkulturen' target='_blank'>HGK Basel FHNW</a>), Erik Axel Eggeling (<a href='https://iart.ch' target='_blank'>iart</a>) \n Organizational Direction:  Florence Noelpp (<a href='https://mjm.cc' target='_blank'>mjm.cc</a>), Martin Matt (<a href='https://mjm.cc' target='_blank'>mjm.cc</a>) \n Communication & Marketing: Bettina Lotz (<a href='https://iart.ch' target='_blank'>iart</a>), Ugo Pecoraio (<a href='https://hek.ch' target='_blank'>HEK</a> \n Sponsoring: Lukas Fitze (<a href='https://iart.ch' target='_blank'>iart</a>), Sabine Himmelsbach (<a href='https://hek.ch' target='_blank'>HEK</a>) \n  \n Design: <a href='https://johnsonkingston.ch' target='_blank'>Johnson / Kingston</a> \n Typefaces: Forked versions of <a href='https://savannah.gnu.org/projects/freefont/' target='_blank'>Free Sans and Free Serif</a> initiated by Primož Peterlin and maintained by Steve White under GPLv3 licence \n  \n For general inquiries: <a href='mailto:hello@meshfestival.ch '>hello@meshfestival.ch</a> \n  \n We are not liable for content that is linked through our website. \n The information, texts, and images contained in the website of the Mesh Festival are solely for providing information about the Mesh Festival. Commercial use and the use in publications are only permitted with prior approval from the responsible persons at the Mesh Festival for reproductions/image rights.  \n  \n ©2023 / 2024 Verein Mesh Festival",
+  "disclaimer":"Privacy agreement",
+  "openCall":"Open Call",
+  "openCallContent":"Mesh festival is inviting artists to present their projects, videos, installations, performances or immersive artworks for the first festival edition: Tooling the Future. Join Mesh Festival! The artists of the festival are selected by open call submissions and by invitations. The admission process is open from April 8th to May 5th, 2024.",
+  "translation":"DE",
+  "lang":"en-EN",
+  "colors": 
+  [ 
+    {
+      "color1":"215, 255, 0",
+      "color2":"140, 110, 255",
+      "subtitle":"What are the tools of the future that we really need? ",
+      "time":0
+    },
+    {
+      "color1":"255, 145, 120",
+      "color2":"120, 150, 120",
+      "subtitle":"How do we want to live together? ",
+      "time":10
+    },    
+    {
+      "color1":"230, 155, 255",
+      "color2":"0, 200, 60",
+      "subtitle":"What kinds of solutions and spaces do we want? ",
+      "time":20
+    }
+  ]
+}

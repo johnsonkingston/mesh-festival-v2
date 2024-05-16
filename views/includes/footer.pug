@@ -1,0 +1,23 @@
+div !{footer[0].Adress}
+
+div !{footer[0].Title_Logo_Line_1}
+
+div !{footer[0].Title_Logo_Line_2}
+
+div 
+    ul 
+        each val in footer[0].Top_Links
+            li
+                a(href=baseURL+val.URL+'/'+language[0])= val.Title
+
+div 
+    ul 
+        each val in footer[0].Second_Links
+            li
+                a(href=baseURL+val.URL+'/'+language[0])= val.Title
+
+div 
+    ul 
+        each val in footer[0].Small_Links
+            li
+                a(href=baseURL+val.URL+'/'+language[0])= val.Title

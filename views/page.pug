@@ -1,0 +1,19 @@
+html 
+    include includes/head.pug
+    body 
+        include includes/navigation.pug
+        h1 
+            =data.translations[languageParameter].Title
+        main  !{data.translations[languageParameter].Content}
+
+        script.
+            data = !{JSON.stringify(data).replace(/<\//g, "<\\/")};
+            console.log('data object', data);
+            navigation = !{JSON.stringify(navigation).replace(/<\//g, "<\\/")};
+            console.log('navigation object', navigation);
+            footer = !{JSON.stringify(footer).replace(/<\//g, "<\\/")};
+            console.log('footer object', footer);
+            language = !{JSON.stringify(language).replace(/<\//g, "<\\/")};
+            console.log('language object', language);
+            
+        include includes/footer.pug
