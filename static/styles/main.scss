@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'FreeSerif-JK';
+    src: url('../fonts/JK-MESH-Serif.woff2') format('woff2'),
+        url('../fonts/JK-MESH-Serifwoff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreeSans-JK';
+    src: url('../fonts/JK-MESH-Sans.woff2') format('woff2'),
+        url('../fonts/JK-MESH-Sans.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+$padding: 0.8vw;
+
+$fontSize0: 1.1vw;
+$lineHeight0: 1.4vw;
+$fontSize1: 1.5vw;
+$lineHeight1: 1.5vw;
+$fontSize2: 2vw;
+$lineHeight2: 2.2vw;
+$fontSize3: 7vw;
+$lineHeight3: 6vw;
+
+$scaleFactor: 2.5;
+
+:root {
+    --color1:   215, 255, 0, 1;
+    --color2:   140, 110, 255, 1;
+    --color3:   215,215,215,1;
+    --color4:   0,0,0,0;
+    }
+
+body{
+    font-family: 'FreeSans-JK', sans-serif;
+    margin:0;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+
+}
+::selection {
+    background: rgba(var(--color1));
+}
+a{
+    text-decoration: none; 
+    color: rgba(var(--color2));
+    transition: color 1s linear;
+
+}
+h1,h2,h3,h4{
+    max-width: 100%;
+    overflow: hidden;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;   
+    font-weight: normal !important;
+}   
+p{
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    hyphens:auto;
+}
+ul{
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*GENERAL*/
+.mediumpill{
+    font-size: $fontSize2;
+    line-height: $lineHeight2*2;
+    border-radius: $fontSize2;
+    padding: $padding/2 $padding*2 $padding/2 $padding*2;
+    margin-right: $padding;
+}
+
+/*PAGE */
+        main
+        {
+            width:50%;
+            background-color: rgba(var(--color3));
+            padding: $padding;
+            .mainimage{
+                position: fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+            }
+        }
+        h1,h2,h3{
+            font-family: 'FreeSerif-JK';
+            text-align: center;
+            color: rgba(var(--color2));
+            transition: color 1s linear;
+        }
+        h1{
+            font-size: $fontSize3;
+            line-height: $lineHeight3;
+        }
+        p,li{
+            color: rgba(var(--color2));
+            font-size: $fontSize2;
+            line-height: $lineHeight2;
+        }
+
+
+
+
+/*NAVIGATION */
+nav{
+    position: fixed;
+    top:-90%;
+    width:100%;
+    height: 90%;
+    background: linear-gradient(0deg,  rgba(var(--color1))0%, rgba(var(--color3)) 100%);
+    transition: top 0.5s ease-in-out;
+    li.navigation{
+        font-size: $fontSize3;
+        line-height: $lineHeight3;
+        text-align: center;       
+    }
+
+}
+.open{
+    top:0;
+}
+#navButton{
+    position: fixed;
+    top:$padding;
+    right:$padding;
+    img{
+        width:$fontSize3;
+    }
+}
+
+
+/* FOOTER */
+footer{
+    background-color: rgba(var(--color2));
+    padding: $padding*2;
+    a,p{
+        color:white;
+        font-size: $fontSize1;
+        line-height: $lineHeight1;
+    }
+    div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .toplinks{
+        width:75%;
+        li{
+            display: inline-block;
+            .mediumpill{
+                border: 1px solid rgba(var(--color1));
+            }
+            a{
+                background-color: rgba(var(--color1));
+                color:  rgba(var(--color2));
+            }
+            a:hover{
+                background-color:rgba(var(--color2));
+                color: rgba(var(--color1));
+            }
+        }
+        .logo{
+            width: 33%;
+        }
+        .logo,ul{
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .adresse,.left{
+        width:25%;
+    }
+    .left{
+        height:100px;
+        .mediumpill{
+            border: 1px solid white;
+        }
+        a{
+            background-color: rgba(var(--color2));
+        }
+        a:hover{
+            background-color: white;
+            color:rgba(var(--color2));
+        }
+        .smicons{
+            img{
+                width: $fontSize2*2.5;
+                margin-right: $padding;
+            }
+            margin-bottom: $padding*3;
+        }
+    }
+    .middle{
+        width: 50%;
+    }
+}

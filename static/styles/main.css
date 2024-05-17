@@ -57,6 +57,152 @@ p {
           hyphens: auto;
 }
 
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
+
+/*GENERAL*/
+.mediumpill {
+  font-size: 2vw;
+  line-height: 4.4vw;
+  border-radius: 2vw;
+  padding: 0.4vw 1.6vw 0.4vw 1.6vw;
+  margin-right: 0.8vw;
+}
+
+/*PAGE */
+main {
+  width: 50%;
+  background-color: rgba(var(--color3));
+  padding: 0.8vw;
+}
+main .mainimage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  font-family: "FreeSerif-JK";
+  text-align: center;
+  color: rgba(var(--color2));
+  transition: color 1s linear;
+}
+
+h1 {
+  font-size: 7vw;
+  line-height: 6vw;
+}
+
+p, li {
+  color: rgba(var(--color2));
+  font-size: 2vw;
+  line-height: 2.2vw;
+}
+
+/*NAVIGATION */
+nav {
+  position: fixed;
+  top: -90%;
+  width: 100%;
+  height: 90%;
+  background: linear-gradient(0deg, rgba(var(--color1)) 0%, rgba(var(--color3)) 100%);
+  transition: top 0.5s ease-in-out;
+}
+nav li.navigation {
+  font-size: 7vw;
+  line-height: 6vw;
+  text-align: center;
+}
+
+.open {
+  top: 0;
+}
+
+#navButton {
+  position: fixed;
+  top: 0.8vw;
+  right: 0.8vw;
+}
+#navButton img {
+  width: 7vw;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(var(--color2));
+  padding: 1.6vw;
+}
+footer a, footer p {
+  color: white;
+  font-size: 1.5vw;
+  line-height: 1.5vw;
+}
+footer div {
+  display: inline-block;
+  vertical-align: top;
+}
+footer .toplinks {
+  width: 75%;
+}
+footer .toplinks li {
+  display: inline-block;
+}
+footer .toplinks li .mediumpill {
+  border: 1px solid rgba(var(--color1));
+}
+footer .toplinks li a {
+  background-color: rgba(var(--color1));
+  color: rgba(var(--color2));
+}
+footer .toplinks li a:hover {
+  background-color: rgba(var(--color2));
+  color: rgba(var(--color1));
+}
+footer .toplinks .logo {
+  width: 33%;
+}
+footer .toplinks .logo, footer .toplinks ul {
+  display: inline-block;
+  vertical-align: top;
+}
+footer .adresse, footer .left {
+  width: 25%;
+}
+footer .left {
+  height: 100px;
+}
+footer .left .mediumpill {
+  border: 1px solid white;
+}
+footer .left a {
+  background-color: rgba(var(--color2));
+}
+footer .left a:hover {
+  background-color: white;
+  color: rgba(var(--color2));
+}
+footer .left .smicons {
+  margin-bottom: 2.4vw;
+}
+footer .left .smicons img {
+  width: 5vw;
+  margin-right: 0.8vw;
+}
+footer .middle {
+  width: 50%;
+}/*# sourceMappingURL=main.css.map */

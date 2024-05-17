@@ -1,10 +1,11 @@
 html 
     include includes/head.pug
-    body 
+    body.page
         include includes/navigation.pug
-        h1 
-            =data.translations[languageParameter].Title
-        main  !{data.translations[languageParameter].Content}
+
+        main
+            img.mainimage(src=imgURL+data.Main_Image.filename_disk ? Main_Image.filename_disk : 'none.jpg')
+            .content !{data.translations[languageParameter].Content}
 
         script.
             data = !{JSON.stringify(data).replace(/<\//g, "<\\/")};
