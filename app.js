@@ -54,8 +54,21 @@ async function getNavigation() {
     }
 }
 
+//News
+async function getNews() {
+    const response = await fetch("https://env-9468449.appengine.flow.ch/items/News?fields[]=*.*");
+    if (!response.ok) {
+        console.log('Response not okay');
+        const data = '';
+        return data;
+    }else
+    {
+        const data = await response.json();
+        return data;
+    }
+}
 
-//Navigation
+//Footer
 async function getFooter() {
     const response = await fetch("https://env-9468449.appengine.flow.ch/items/Footer_translations");
     if (!response.ok) {
@@ -122,13 +135,15 @@ app.get("/pages/:pageSlug/:language?", async function (req, res) {
         result = await getPage(pageSlug);
         navigation = await getNavigation();
         footer = await getFooter();
+        news = await getNews();
+
         //console.log(result.data[0]);
         languageObject = [language,languageTransform(language)];
-        console.log(languageObject);
-        res.render('page',{data:result.data[0],navigation:navigation.data,footer:footer.data,language:languageObject});
-    
-        res.status(200).json();
-        res.end;
+        if(result.data[0]){
+            console.log(languageObject);
+            res.render('page',{data:result.data[0],navigation:navigation.data,footer:footer.data,language:languageObject,news:news.data});
+        }
+
     } catch (err) {
         console.error(err);
         res.status(500).send("Error fetching page");
@@ -166,6 +181,59 @@ app.get("/events/:eventSlug", async function (req, res) {
         res.status(500).send("Error fetching page");
     }
 });
+
+
+//Startpage
+async function getStartpage() {
+    const response = await fetch("https://env-9468449.appengine.flow.ch/items/Startpage?fields[]=*.*.*");
+
+    if (!response.ok) {
+        console.log('Response not okay');
+        const data = '';
+        return data;
+    }else
+    {
+        const data = await response.json();
+        return data;
+    }
+}
+
+app.get("/:language?", async function (req, res) {
+
+    try { 
+        language = req.params.language  || 'en';
+
+        result = await getStartpage();
+        navigation = await getNavigation();
+        footer = await getFooter();
+        news = await getNews();
+
+        languageObject = [language,languageTransform(language)];
+
+        //console.log(result);
+        //console.log(language);
+
+        if(result){
+             res.render('startpage',{data:result.data,navigation:navigation.data,footer:footer.data,news:news.data,language:languageObject});
+        }
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error fetching page");
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 //404
 /* app.get('*', function(req, res){

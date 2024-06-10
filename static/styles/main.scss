@@ -25,6 +25,8 @@ $fontSize2: 2vw;
 $lineHeight2: 2.2vw;
 $fontSize3: 7vw;
 $lineHeight3: 6vw;
+$fontSize3VH: 10vh;
+$lineHeight3VH: 8vh;
 
 $scaleFactor: 2.5;
 
@@ -51,7 +53,7 @@ a{
     transition: color 1s linear;
 
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,h5,h6{
     max-width: 100%;
     overflow: hidden;
     margin-block-start: 0;
@@ -79,6 +81,14 @@ ul{
 }
 
 /*GENERAL*/
+.smallpill{
+    font-size: $fontSize1;
+    line-height: $lineHeight1*2;
+    border-radius: $fontSize1;
+    padding: $padding/4 $padding $padding/4 $padding;
+    margin-right: $padding/2;  
+    white-space: nowrap;
+}
 .mediumpill{
     font-size: $fontSize2;
     line-height: $lineHeight2*2;
@@ -86,23 +96,204 @@ ul{
     padding: $padding/2 $padding*2 $padding/2 $padding*2;
     margin-right: $padding;
 }
+.bigpill{
+    font-size: $fontSize3;
+    line-height: $lineHeight3*1.5;
+    border-radius: $fontSize3;
+    padding: $padding $padding*4 $padding $padding*4;
+    background: rgba(var(--color1));
+    color: rgba(var(--color2));
+    text-align: center;
+    width: fit-content;
+}
+.blur{
+    filter:blur(20px);
+}
 
-/*PAGE */
-        main
-        {
-            width:50%;
-            background-color: rgba(var(--color3));
-            padding: $padding;
-            .mainimage{
-                position: fixed;
-                top:0;
-                left:0;
-                width:100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: -1;
+
+/*STARTPAGE */
+.startpage
+{
+    scroll-snap-type: y mandatory;
+
+    main{
+        min-height: 100vh;
+        height: calc(100vh - $lineHeight0);
+        padding-top: $lineHeight0;
+
+        overflow: scroll;
+        scroll-snap-type: y mandatory;
+
+        section{
+            width: 100vw;
+            height: calc(200vh - $fontSize2*4);
+            scroll-snap-align: start;
+            padding-top: $lineHeight0;
+
+            .bigpill{
+                position: sticky;
+                top: 50vh;
+                left: 50vw;
+                margin-bottom: 40vh;
+                transform: translate(-50%, -50%);
             }
         }
+        video{
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center bottom;
+            position: fixed;
+            top:0;
+            left: 0;
+            mix-blend-mode: difference;
+        }
+        .preview{
+            height: calc(100vh - $fontSize2*2);
+            padding-top: $fontSize2*2;
+            width: 100vw;
+            background: linear-gradient(0deg, rgba(255,255,255) 0%, rgba(var(--color3)) 100%);
+            scroll-snap-align: start;
+            .left, .right{
+                width:50%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            .left{
+                h2{
+                     padding-top: $padding*2; 
+                }
+                p{
+                    font-size: $fontSize2;
+                    line-height: $lineHeight2;
+                    padding: 0 $padding*2;
+                    text-align: center;
+                }
+            }
+            .right{
+                .previewItem{
+                    width:45%;
+                    max-width: 34vh;
+                    padding-top: $padding*2; 
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-left: $padding*2;
+                    color: rgba(var(--color2));
+                    text-align: center;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        box-shadow: 0px 0px 5px black;
+                        margin-bottom: $padding;
+                    }
+                    .previewCaptionDot{
+                        font-size: $fontSize0;
+                        line-height: $lineHeight0;   
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: $padding;
+                    }
+                    .previewCaption{
+                        text-align: left;
+                        display: inline-block;
+                        vertical-align: top;
+                        max-width: 87%;
+                        h3{
+                            font-size: $fontSize1;
+                            line-height: $lineHeight1;   
+                            text-align: left;
+                            font-family: 'FreeSans-JK';
+                        }
+                        h4{
+                            color: rgba(var(--color2));
+                            font-size: $fontSize0;
+                            line-height: $lineHeight0;   
+                        }
+                    }
+                }
+
+            }
+            h2{
+                font-size: $fontSize3;
+                line-height: $lineHeight3;
+                font-family: 'FreeSans-JK';
+            }
+
+        }
+    }
+    .smallpill{
+        margin-top: 8vw;
+        background: rgba(var(--color2));
+        color: rgba(var(--color1));
+        display: inline-block;
+    }
+
+}
+
+/*PAGE */
+        .page
+        {
+            main
+            {
+                width:50%;
+                background: linear-gradient(0deg, rgba(var(--color1)) 0%, rgba(var(--color3)) 50%);
+                background-attachment: fixed;
+                padding: $padding;
+                margin-left: calc(50% - ($padding*2));
+                min-height: 100vh;
+                .mainimage, .grid{
+                    position: fixed;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: -3;
+                }
+                .grid{
+                    z-index: 0;
+                    width:auto;
+                    z-index: -2;
+                    mix-blend-mode: soft-light;
+                }
+                .mainimageCaption{
+                    position: fixed;
+                    left:$padding;
+                    bottom: $padding;
+                    font-size: $fontSize1;
+                    color: rgba(var(--color1));
+                    z-index: -1;
+                }
+                .content{
+                    ul{
+                        text-indent: -$lineHeight2;
+                        margin-left: $lineHeight2;
+                    }
+                    li:before{
+                        content: '• '
+                    }
+                    h1{
+                        margin-top: $fontSize3;
+                    }
+                    h6{
+                        font-size: $fontSize0;
+                        line-height: $lineHeight0;
+                        color:  rgba(var(--color2));
+                        margin-bottom: $lineHeight0;
+                    }
+                    p, li{
+                        hyphens: auto;
+                    }
+                    table,tr,td{
+                        border: none;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+
+
+
         h1,h2,h3{
             font-family: 'FreeSerif-JK';
             text-align: center;
@@ -113,7 +304,8 @@ ul{
             font-size: $fontSize3;
             line-height: $lineHeight3;
         }
-        p,li{
+        p,li
+        {
             color: rgba(var(--color2));
             font-size: $fontSize2;
             line-height: $lineHeight2;
@@ -128,32 +320,106 @@ nav{
     top:-90%;
     width:100%;
     height: 90%;
-    background: linear-gradient(0deg,  rgba(var(--color1))0%, rgba(var(--color3)) 100%);
+    background: linear-gradient(0deg,  rgba(var(--color1))0%, rgba(var(--color3)) 50%);
     transition: top 0.5s ease-in-out;
+    z-index: 90;
+    overflow: hidden;
+    ul{
+        margin-top: $padding*3;
+    }
     li.navigation{
-        font-size: $fontSize3;
-        line-height: $lineHeight3;
+        font-size: $fontSize3VH;
+        line-height: $lineHeight3VH;
+        padding-bottom: $padding;
         text-align: center;       
+    }
+    .logo{
+        position: absolute;
+        width: 27%;
+    }
+    .navBottom{
+        display: flex;
+        text-align: center;
+        .left, .middle, .right{
+            width: 33%;
+            font-size: $fontSize3VH;
+            font-family: 'FreeSerif-JK';
+        }
+        img{
+            height: $fontSize3VH*0.8;
+            padding: $padding;
+        }
+
+    }
+    .languages{
+        position: absolute;
+        top: 0;
+        right: 9vw;
+        li{
+            display: inline-block;
+            list-style: none;
+        }
+        .smallpill{
+            margin-top: 3vw;
+            background: rgba(var(--color1));
+        }
     }
 
 }
+
 .open{
     top:0;
 }
 #navButton{
     position: fixed;
-    top:$padding;
-    right:$padding;
+    top: $padding*2;
+    right:$padding*2;
+    z-index: 100;
+    cursor:pointer;
     img{
-        width:$fontSize3;
+        width:6vw;
     }
 }
+.startpage #navButton{
+    top:$fontSize2*2 + $padding*2;
+}
+
+
+/* NEWSBAR */
+.marquee {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    font-family: 'FreeSerif-JK';
+    background-color: rgba(var(--color1));
+    color:rgba(var(--color2));
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    height:$fontSize2*2;
+    box-shadow: 0 0 20px black;
+}
+.marquee p {
+    display: inline-block;
+    animation: marquee 7s linear infinite;
+    line-height: $lineHeight2*2;
+    font-size: $fontSize2*2;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-25%, 0); }
+}
+
 
 
 /* FOOTER */
 footer{
     background-color: rgba(var(--color2));
     padding: $padding*2;
+    box-shadow: 0 0 20px black;
+
     a,p{
         color:white;
         font-size: $fontSize1;

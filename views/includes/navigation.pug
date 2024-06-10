@@ -1,11 +1,34 @@
 nav
+    a(href=baseURL)
+        img.logo(src=baseURL+'static/img/mesh-festival.png')
     ul
         each val in navigation[0].Menu
             li.navigation
-                a(href=baseURL+val.URL+'/'+language[0])= val.Title
+                a(href=baseURL+'pages/'+val.URL+'/'+language[0])= val.Title
+    .languages
+        li.smallpill
+            a(href=baseURL+'de').
+                DE
+        li.smallpill
+            a(href=baseURL+'en').
+                EN    
+    .navBottom 
+        .left 
+            a(href=baseURL+"pages/visit") Visit
+        .middle 
+            img(src=baseURL+"static/img/icons/sm-icon-01.svg")
+            img(src=baseURL+"static/img/icons/sm-icon-02.svg")
+            img(src=baseURL+"static/img/icons/sm-icon-03.svg")
+                        
+        .right            
+            a(href=baseURL+"pages/about") About
+
+
 #navButton(onclick="toggleNav()")
     img(src=baseURL+"static/img/hamburger.svg")
     script.
         function toggleNav(){
             $('nav').toggleClass('open');
+            $('main').toggleClass('blur');
+            $('footer').toggleClass('blur');
         }

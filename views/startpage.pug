@@ -1,0 +1,102 @@
+html(lang=language[0])
+    include includes/head.pug
+    body.startpage
+        include includes/navigation.pug
+        include includes/news.pug
+
+        main
+            each item in data.View
+                section
+                    .bigpill= item.Title_De
+            - var n = 1
+            each item in data.View
+                video(id='video'+n,src=imgURL+item.Video_Id,muted='true',autoplay='true',loop='true',playsinline='true',style='z-index:-'+n+';')
+                - n = n+1
+
+            script.
+                var positions = [];
+                var activeSection;
+                var activeFilter1;
+
+                $(document).on( "scroll", function() {    
+                    $( "section" ).each(function( index ) {
+                        positions[index] = $('body').scrollTop() - $( this ).position().top;
+                        if(positions[index] > 0){
+                            activeSection = index;
+                            activeFilter1 = ((100 - (positions[index] / $('section').first().height() *100)) / 10)+1;
+                            activeFilter2 = ((100 - (positions[index] / $('section').first().height() *100)) / 10)+1;
+                            activeFilter3 = ((100 - (positions[index] / $('section').first().height() *100)) / 10)+1;
+                        }
+                    });
+                    //console.log(activeSection+' : '+activeFilter1);
+                    $('#video'+(activeSection+1)).css('filter','brightness('+activeFilter1+') contrast('+activeFilter2+') saturate('+activeFilter3+')');
+
+                });
+
+            <!-- Preview Installationen -->    
+            .preview
+                .left
+                    h2=data.translations[languageParameter].Title
+                    .
+                        !{data.translations[languageParameter].Lead}
+                .right 
+                    each val in [0,1,2]
+                        .previewItem 
+                            if data.Preview_Items[0].Events_id.Main_Image == null
+                                img.previewImage(src=imgURL+'5a7095f3-d054-4527-8bb8-998de11e6d28.png')
+                            else 
+                                img.previewImage(src=imgURL+data.Preview_Items[0].Events_id.Main_Image.filename_disk)
+                            .previewCaptionDot.
+                                •
+                            .previewCaption
+                                h3=data.Preview_Items[0].Events_id.Artist
+                                h4=data.Preview_Items[0].Events_id.Venue+' / '+data.Preview_Items[0].Events_id.Time[0].Start
+                    .previewItem 
+                        .smallpill.
+                            Mehr Installationen
+
+            <!-- Preview Performances -->    
+            .preview
+                .left
+                    h2=data.translations_performances[languageParameter].Title
+                    .
+                        !{data.translations_performances[languageParameter].Lead}
+                .right 
+                    each val in [0,1,2]
+                        .previewItem 
+                            if data.Preview_Items[0].Events_id.Main_Image == null
+                                img.previewImage(src=imgURL+'5a7095f3-d054-4527-8bb8-998de11e6d28.png')
+                            else 
+                                img.previewImage(src=imgURL+data.Preview_Items[0].Events_id.Main_Image.filename_disk)
+                            .previewCaptionDot.
+                                •
+                            .previewCaption
+                                h3=data.Preview_Items[0].Events_id.Artist
+                                h4=data.Preview_Items[0].Events_id.Venue+' / '+data.Preview_Items[0].Events_id.Time[0].Start
+                    .previewItem 
+                        .smallpill.
+                            Mehr Installationen
+
+            <!-- Preview Screenings -->    
+            .preview
+                .left
+                    h2=data.translations_screenings[languageParameter].Title
+                    .
+                        !{data.translations_screenings[languageParameter].Lead}
+                .right 
+                    each val in [0,1,2]
+                        .previewItem 
+                            if data.Preview_Items[0].Events_id.Main_Image == null
+                                img.previewImage(src=imgURL+'5a7095f3-d054-4527-8bb8-998de11e6d28.png')
+                            else 
+                                img.previewImage(src=imgURL+data.Preview_Items[0].Events_id.Main_Image.filename_disk)
+                            .previewCaptionDot.
+                                •
+                            .previewCaption
+                                h3=data.Preview_Items[0].Events_id.Artist
+                                h4=data.Preview_Items[0].Events_id.Venue+' / '+data.Preview_Items[0].Events_id.Time[0].Start
+                    .previewItem 
+                        .smallpill.
+                            Mehr Installationen
+
+        include includes/footer.pug
